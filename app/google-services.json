@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "858859511699",
-    "project_id": "sports-betting-match",
-    "storage_bucket": "sports-betting-match.appspot.com"
+    "project_number": "741267564356",
+    "project_id": "stavkasport-227c4",
+    "storage_bucket": "stavkasport-227c4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:858859511699:android:29c7f69471e1113f7f9266",
+        "mobilesdk_app_id": "1:741267564356:android:bf5c8f34acc8178daa9911",
         "android_client_info": {
-          "package_name": "com.sports.tech"
+          "package_name": "com.sports.apps"
         }
       },
       "oauth_client": [
         {
-          "client_id": "858859511699-0s3srq37k8ibo38cl1v6ag8fdfl2ivna.apps.googleusercontent.com",
+          "client_id": "741267564356-il487uf25tdsu7sfgijrf8rakt3q2v04.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDMLyxvSj2i7xRNQ9suxn8lqzwI9_35oJs"
+          "current_key": "AIzaSyCxWbn5IhcyejrrnJ2GVFzNr6rEKvAIeZk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "858859511699-0s3srq37k8ibo38cl1v6ag8fdfl2ivna.apps.googleusercontent.com",
+              "client_id": "741267564356-il487uf25tdsu7sfgijrf8rakt3q2v04.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

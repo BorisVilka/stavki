@@ -1,15 +1,14 @@
 package com.sports.tech
 
 import android.content.Intent
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.webkit.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.Task
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.sports.tech.databinding.ActivitySplashBinding
-import java.io.IOException
 
 class SplashActivity : AppCompatActivity() {
 
@@ -31,9 +30,9 @@ class SplashActivity : AppCompatActivity() {
             finish()
         }
         super.onCreate(savedInstanceState)
-        binding = ActivitySplashBinding.inflate(layoutInflater)
-
-        val settings: WebSettings = binding.web.getSettings()
+        binding = ActivitySplashBinding.inflate(LayoutInflater.from(applicationContext))
+        setContentView(binding.root)
+        val settings: WebSettings = binding.web.settings
         val manager = CookieManager.getInstance()
         manager.setAcceptCookie(true)
         settings.javaScriptEnabled = true
@@ -99,7 +98,6 @@ class SplashActivity : AppCompatActivity() {
                 return true
             }
         })
-        setContentView(binding.root)
         FirebaseRemoteConfig
             .getInstance()
             .fetchAndActivate()

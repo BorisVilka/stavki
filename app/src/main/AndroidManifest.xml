@@ -1,42 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.sports.tech">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".MyApp"
+        android:name="com.sports.tech.MyApp"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:usesCleartextTraffic="true"
+        android:roundIcon="@mipmap/logo_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Design.NoActionBar">
-
-
+        android:theme="@style/Theme.Design.NoActionBar"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".WebActivity"
-            android:windowSoftInputMode="adjustResize"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:name="com.sports.tech.ListActivity"
             android:exported="false" />
-
         <activity
-            android:name=".SplashActivity"
+            android:name="com.sports.tech.WebActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.sports.tech.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
-        </activity>
+            android:name="com.sports.tech.MainActivity"
+            android:exported="true"></activity>
     </application>
 
 </manifest>

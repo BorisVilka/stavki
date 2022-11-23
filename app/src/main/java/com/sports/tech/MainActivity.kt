@@ -1,13 +1,10 @@
 package com.sports.tech
 
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.sports.tech.databinding.ActivityMainBinding
-import okhttp3.Callback
-import retrofit2.Call
-import retrofit2.Response
 
 
 class MainActivity : AppCompatActivity() {
@@ -23,22 +20,29 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.button1.setOnClickListener {
-            Thread {
-                val api = Client.getApi()
-                api.getAns(1).enqueue(object : retrofit2.Callback<MutableList<Answer>> {
-                    override fun onResponse(
-                        call: Call<MutableList<Answer>>,
-                        response: Response<MutableList<Answer>>
-                    ) {
-                        Log.d("TAG","${response.body()?.size} !")
-                    }
-
-                    override fun onFailure(call: Call<MutableList<Answer>>, t: Throwable) {
-
-                    }
-
-                })
-            }.start()
+            startActivity(Intent(applicationContext,ListActivity::class.java).apply {
+                putExtra("ind",1)
+            })
+        }
+        binding.button2.setOnClickListener {
+            startActivity(Intent(applicationContext,ListActivity::class.java).apply {
+                putExtra("ind",2)
+            })
+        }
+        binding.button3.setOnClickListener {
+            startActivity(Intent(applicationContext,ListActivity::class.java).apply {
+                putExtra("ind",3)
+            })
+        }
+        binding.button4.setOnClickListener {
+            startActivity(Intent(applicationContext,ListActivity::class.java).apply {
+                putExtra("ind",4)
+            })
+        }
+        binding.button5.setOnClickListener {
+            startActivity(Intent(applicationContext,ListActivity::class.java).apply {
+                putExtra("ind",5)
+            })
         }
     }
 }
