@@ -7,6 +7,7 @@ import android.view.View
 import com.sports.tech.databinding.ActivityListBinding
 import retrofit2.Call
 import retrofit2.Response
+import kotlin.math.min
 
 class ListActivity : AppCompatActivity() {
 
@@ -26,11 +27,16 @@ class ListActivity : AppCompatActivity() {
                     response: Response<MutableList<Answer>>
                 ) {
                     Log.d("TAG","${response.body()?.size} !")
-                    val list = response.body()?.subList(0,10)
+                    val list = response.body()
+                    var tmp = mutableListOf<Answer>()
                     for(i in list!!.indices) {
-                        Log.d("TAG",list[i].op1+" "+list[i].op2)
+                        if(!contains(tmp,list[i])) {
+                            tmp.add(list[i])
+                            if(tmp.size>=20) break
+                        }
                     }
-                    val adapter = MyAdapter(list)
+                    Log.d("TAG","${tmp.size} TT")
+                    val adapter = MyAdapter(tmp)
                     runOnUiThread {
                         binding.progressBar3.visibility = View.GONE
                         binding.list.adapter = adapter
@@ -43,5 +49,15 @@ class ListActivity : AppCompatActivity() {
 
             })
         }.start()
+    }
+    fun contains(list: MutableList<Answer>, a: Answer): Boolean {
+        var b = false
+        for(i in list) {
+            if(i.chemp==a.chemp && i.op1==a.op1 && i.op2==a.op2) {
+                b = true
+                break
+            }
+        }
+        return b
     }
 }
